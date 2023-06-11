@@ -8,6 +8,7 @@ for visualize the thai equity performance
 ## Table of Contents
 
 - [Installation](#Installation)
+- [Configuration](#Configuration)
 - [Run the app](#run-the-app)
 - [File and Folder Description](#File-and-Folder-Description)
 - [Feature](#Feature)
@@ -22,12 +23,30 @@ pip install pandas
 pip install plotly
 ```
 
-then make the directory of TH-stock.TH-stock folder 
-should contain csv file in each period of time
+# Configuration
+
+after the install python module,your have to make the directory of TH-stock.TH-stock folder should contain csv file in each period of time
 
 ```bash
 mkdir TH-data
 ```
+The file structure in TH-data
+
+```
+|-- TH-data
+||-- 2547-Q1.csv
+||-- 2547-Q2.csv
+||-- 2547-Q3.csv
+||-- 2547-Q4.csv
+ ...
+ ...
+||-- 2566-Q1.csv
+```
+
+The format in each csv file the format can be show in [Example csv file](example/example.csv)
+Note that the example has only 5 record stock you have to fill the data
+
+
 
 # Run the app
 
@@ -47,7 +66,9 @@ streamlit run dashboard.py
     -   This folder contain config color of the plot 
 4. feature folder
     -   This folder contain all feature view 
-5.
+5.  utils folder 
+    -   This folder contain util to make a plot such as barplot,lineplot and card 
+
 
 
 # Feature
