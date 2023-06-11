@@ -3,29 +3,20 @@ from plotly.subplots import make_subplots
 
 from utils.utils import *
 from utils.barplot import *
+from utils.cardlist import *
 
 def bsFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
 
     if not df.empty: 
 
-        # Total Asset
-        current_TA,previous_TA_yoy  = getmetric('Total Asset',df,year,quarter)
+        cardYoY(
+            st,
+            columns=['Total Asset','Total Liabilities','Equity','D/E'],
+            df=df,
+            year=year,
+            quarter=quarter
+        )
 
-        # Totla Liabilities 
-        current_TL,previous_TL_yoy  = getmetric('Total Liabilities',df,year,quarter)
-
-        # Equity
-        current_Equity,previous_Equity_yoy  = getmetric('Equity',df,year,quarter)
-
-        # D/E
-        current_Equity = getCurrentData('D/E',df,year,quarter)
-
-        # Display the metrics
-        col1, col2, col3, col4 = st.columns(4)
-        col1.metric("Total Asset", "{:,.2f}".format(current_TA), f"{previous_TA_yoy:.2f}"+"% YoY")
-        col2.metric("Total Liabilities", "{:,.2f}".format(current_TL), f"{previous_TL_yoy:.2f}"+"% YoY")
-        col3.metric("Equity", "{:,.2f}".format(current_Equity), f"{previous_Equity_yoy:.2f}"+"% YoY")
-        col4.metric("D/E", "{:,.2f}".format(current_Equity))
 
     # Add space
     st.markdown('<br>', unsafe_allow_html=True)

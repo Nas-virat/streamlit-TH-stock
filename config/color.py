@@ -1,31 +1,36 @@
-COLOR = {
-    'Revenue': '#FF0000',
-    'Gross Profit': '#FFA500',
-    'EBITDA': '#FFFF00',
-    'Net Profit': '#00FF00',
-    'EPS': '#00FFFF',
-    'ROE': '#0000FF',
-    'ROA': '#800080',
-    'Cash Flow': '#FF00FF',
-    'Gross Profit Margin': '#2ca02c',
-    'EBIT Margin': '#ff7f0e',
+Color = {
+    ## Balance Sheet (BS)
+    'Total Asset': '#4e79a7',
+    'Total Liabilities': '#e15759',
+    'Equity': '#59a14f',
+    'Paid-up Cap': '#EDC948',
+    'D/E': '#e15759',
+
+    ## cashcycle
+    'Average Sale Period': '#9467bd',
+    'Average Collection Period': '#8c564b',
+    'Average Payment Period': '#e377c2',
+    'Cash Cycle': '#d62728',
+
+    ## cashflow
+    'Operating Cash Flow': '#1f77b4',
+    'Investing Cash Flow': '#ff7f0e',
+    'Financing Cash Flow': '#2ca02c',
+    'Net Cash Flow': '#d62728',
+
+    ## income
+
+    'Revenue': '#1f77b4',
+    'Gross Profit': '#ff7f0e',
+    'EBITDA': '#2ca02c',
+    'Net Profit': '#d62728',
+    'EPS': '#d62728',
+    'ROE': '#59a14f',
+    'ROA': '#4e79a7',
+
+
+    'Gross Profit Margin': '#ff7f0e',
+    'EBIT Margin': '#2ca02c',
     'Net Profit Margin': '#d62728',
-    'Current Ratio': '#9467bd',
-    'Quick Ratio': '#8c564b',
-    'Debt to Equity': '#e377c2',
-    'Debt to Asset': '#7f7f7f',
-    'Interest Coverage Ratio': '#bcbd22',
-    'Inventory Turnover': '#17becf',
-    'Receivable Turnover': '#1f77b4',
-    'Payable Turnover': '#aec7e8',
-    'Total Asset Turnover': '#ffbb78',
-    'Fixed Asset Turnover': '#98df8a',
-    'Equity Turnover': '#ff9896',
-    'Days Inventory': '#c5b0d5',
-    'Days Receivable': '#c49c94',
-    'Days Payable': '#f7b6d2',
-    'Days Sales in Inventory': '#c7c7c7',
-    'Days Sales in Receivable': '#dbdb8d',
-    'Days Sales in Payable': '#9edae5',
-    'Cash Conversion Cycle': '#ad494a',
+
 }

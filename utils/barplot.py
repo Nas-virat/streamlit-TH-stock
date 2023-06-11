@@ -6,8 +6,8 @@ from plotly.subplots import make_subplots
 def barplot(
         fig:go.Figure,
         df:pd.DataFrame,
-        columns:list,
-        markers:list,
+        columns:list[str],
+        markers:list[str],
         legendfontsize:int,
         xaxis_title:str,
         yaxis_title:str,

@@ -1,5 +1,5 @@
 import pandas as pd 
-
+from config.color import *
 def getCurrentData(
         column:str,
         df: pd.DataFrame,
@@ -22,3 +22,9 @@ def getmetric(
     previous_temp_yoy = (current_temp - previous_temp) / previous_temp * 100 if previous_temp != 0 else 0
 
     return current_temp , previous_temp_yoy
+
+def setColor(columns:list[str]) -> list[str]:
+    list_color = []
+    for column in columns:
+        list_color.append(Color[column])
+    return list_color
