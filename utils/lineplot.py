@@ -48,7 +48,8 @@ def lineplot(
             y=1,
             bgcolor='rgba(0,0,0,0)',
             font=dict(size=legendfontsize)
-        )
+        ),
+        hoverlabel=dict(font=dict(size=24))
     )
 
     # Update x-axis labels rotation

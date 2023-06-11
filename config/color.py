@@ -16,7 +16,7 @@ Color = {
     'Operating Cash Flow': '#1f77b4',
     'Investing Cash Flow': '#ff7f0e',
     'Financing Cash Flow': '#2ca02c',
-    'Net Cash Flow': '#d62728',
+    'Net Cash Flow': '#9467bd',
 
     ## income
 
