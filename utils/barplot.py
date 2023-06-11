@@ -38,8 +38,14 @@ def barplot(
         showlegend=True,
         xaxis_title=xaxis_title,
         yaxis_title=yaxis_title,
-        xaxis=dict(title_font=dict(size=20)),
-        yaxis=dict(title_font=dict(size=20)),
+        xaxis=dict(
+            title_font=dict(size=20),
+            tickfont=dict(size=18),
+        ),
+        yaxis=dict(
+            title_font=dict(size=20),
+            tickfont=dict(size=18),
+        ),
         barmode='group',
         legend=dict(
             x=1,
