@@ -11,6 +11,7 @@ from feature.roeroa import *
 from feature.eps import *
 from feature.cashflow import *
 from feature.BS import *
+from feature.cashcycle import *
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
@@ -67,12 +68,16 @@ st.markdown('<br>', unsafe_allow_html=True)
 st.markdown('### Revenue and Profit')
 revenueProfitFeature(st,filtered_data)
 
-# Add space
-st.markdown('<br>', unsafe_allow_html=True)
-
 # Margin
 st.markdown('### Gross Profit Margin and Net Profit Margin')
 marginFeature(st,filtered_data)
+
+# Add space
+st.markdown('<br>', unsafe_allow_html=True)
+
+# Balance Sheet
+st.markdown('### Balance Sheet')
+bsFeature(st,filtered_data,current_year,current_quarter)
 
 # Add space
 st.markdown('<br>', unsafe_allow_html=True)
@@ -95,6 +100,8 @@ st.markdown('<br>', unsafe_allow_html=True)
 st.markdown('### Cash Flow')
 cashflowFeature(st,filtered_data,current_year,current_quarter)
 
-# Balance Sheet
-st.markdown('### Balance Sheet')
-bsFeature(st,filtered_data,current_year,current_quarter)
+# Add space
+st.markdown('<br>', unsafe_allow_html=True)
+
+st.markdown('### Cash Cycle')
+cashCyclefeature(st,filtered_data,current_year,current_quarter)

@@ -34,6 +34,8 @@ def lineplot(
         showlegend=True,
         xaxis_title=xaxis_title,
         yaxis_title=yaxis_title,
+        xaxis=dict(title_font=dict(size=20)),
+        yaxis=dict(title_font=dict(size=20)),
         barmode='group',
         legend=dict(
             x=1,

@@ -17,12 +17,16 @@ def bsFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
         # Equity
         current_Equity,previous_Equity_yoy  = getmetric('Equity',df,year,quarter)
 
+        # D/E
+        current_Equity = getCurrentData('D/E',df,year,quarter)
+
         # Display the metrics
-        col1, col2, col3 = st.columns(3)
+        col1, col2, col3, col4 = st.columns(4)
         col1.metric("Total Asset", "{:,.2f}".format(current_TA), f"{previous_TA_yoy:.2f}"+"% YoY")
         col2.metric("Total Liabilities", "{:,.2f}".format(current_TL), f"{previous_TL_yoy:.2f}"+"% YoY")
         col3.metric("Equity", "{:,.2f}".format(current_Equity), f"{previous_Equity_yoy:.2f}"+"% YoY")
-        
+        col4.metric("D/E", "{:,.2f}".format(current_Equity))
+
     # Add space
     st.markdown('<br>', unsafe_allow_html=True)
 
@@ -40,6 +44,23 @@ def bsFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
 
     # Display the line plot
     st.plotly_chart(fig,use_container_width=True)
+
+    st.markdown('### Paid-up Cap')
+
+    fig2 = make_subplots(specs=[[{"secondary_y": True}]])
+    barplot(
+        fig=fig2,
+        df=df,
+        columns=['Paid-up Cap'],
+        markers=['#2ca02c'],
+        legendfontsize=20,
+        xaxis_title='Year',
+        yaxis_title='Amount',
+        tickangle=-60
+    )
+
+    # Display the line plot
+    st.plotly_chart(fig2,use_container_width=True)
 
     if df.empty:
         st.markdown('No data available for the selected stock and year range.')

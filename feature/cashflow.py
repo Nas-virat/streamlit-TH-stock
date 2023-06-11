@@ -3,26 +3,23 @@ from plotly.subplots import make_subplots
 
 from utils.utils import *
 from utils.barplot import *
+from utils.cardlist import *
 
 
 def cashflowFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
 
     if not df.empty: 
-        # Operating Cash Flow
-        current_CFO = getCurrentData('Operating Cash Flow',df,year,quarter)
-        # Investing Cash Flow 
-        current_CFI = getCurrentData('Investing Cash Flow',df,year,quarter)
-        # Financing Cash Flow
-        current_CFF = getCurrentData('Financing Cash Flow',df,year,quarter)
-        # Net Cash Flow
-        current_NCF = getCurrentData('Net Cash Flow',df,year,quarter)
-
-        col1, col2, col3 ,col4 = st.columns(4)
-        col1.metric("Operating Cash Flow", "{:,.2f}".format(current_CFO))
-        col2.metric("Investing Cash Flow", "{:,.2f}".format(current_CFI))
-        col3.metric("Financing Cash Flow", "{:,.2f}".format(current_CFF))
-        col4.metric("Net Cash Flow", "{:,.2f}".format(current_NCF))
-        
+        card(
+            st,
+            columns=['Operating Cash Flow',
+                     'Investing Cash Flow',
+                     'Financing Cash Flow',
+                     'Net Cash Flow'
+                     ],
+            df=df,
+            year=year,
+            quarter=quarter
+        )
 
     else:
         st.markdown('No data available for the selected stock and year range.')

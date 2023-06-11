@@ -4,30 +4,25 @@ from plotly.subplots import make_subplots
 
 from utils.utils import * 
 from utils.lineplot import *
-
+from utils.cardlist import *
 
 def RoeroaFeature(st,df : pd.DataFrame,year:int,quarter:int) -> None:
 
     if df.empty:
         st.markdown('No data available for the selected stock and year range.')
     else:
-        # Display the metrics
-        #ROE ROA
-        roe = getCurrentData('ROE',df,year,quarter)
-        roa = getCurrentData('ROA',df,year,quarter)
-        de = getCurrentData('D/E',df,year,quarter)
+        card(
+            st,
+            columns=['ROE','ROA','D/E'],
+            df=df,
+            year=year,
+            quarter=quarter
+        )
 
-        
-        col1, col2, col3 = st.columns(3)
-        col1.metric("Return on Equity (ROE)", "{:,.2f}".format(roe))
-        col2.metric("Return on Asset (ROA)", "{:,.2f}".format(roa))
-        col3.metric("Debt to Equity", "{:,.2f}".format(de))
-
-
-    figroeroa = make_subplots(specs=[[{"secondary_y": True}]])
+    fig = make_subplots(specs=[[{"secondary_y": True}]])
 
     lineplot(
-        fig=figroeroa,
+        fig=fig,
         df=df,
         columns=['ROE','ROA'],
         markers=['#2ca02c','#d62728'],
@@ -38,4 +33,4 @@ def RoeroaFeature(st,df : pd.DataFrame,year:int,quarter:int) -> None:
     )
 
     # Display the line plot
-    st.plotly_chart(figroeroa,use_container_width=True)
+    st.plotly_chart(fig,use_container_width=True)
