@@ -4,32 +4,26 @@ from plotly.subplots import make_subplots
 
 from utils.utils import * 
 
-def metricFeature(st,filtered_data:pd.DataFrame,year:int,quarter:int):
-    if not filtered_data.empty: 
+def metricFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
+    if not df.empty: 
 
         # Revenue
-        current_revenue,previous_revenue_yoy  = getmetric('Revenue',filtered_data,year,quarter)
+        current_revenue,previous_revenue_yoy = getmetric('Revenue',df,year,quarter)
 
         # Gross Profit 
-        current_gp,previous_gp_yoy  = getmetric('Gross Profit',filtered_data,year,quarter)
+        current_gp,previous_gp_yoy = getmetric('Gross Profit',df,year,quarter)
 
         # EBITDA
-        current_ebitda,previous_ebitda_yoy  = getmetric('EBITDA',filtered_data,year,quarter)
+        current_ebitda,previous_ebitda_yoy = getmetric('EBITDA',df,year,quarter)
 
         # Net profit
-        current_np,previous_np_yoy = getmetric('Net Profit',filtered_data,year,quarter)
+        current_np,previous_np_yoy = getmetric('Net Profit',df,year,quarter)
 
         #EPS
-        current_eps,previous_eps_yoy = getmetric('EPS',filtered_data,year,quarter)
+        current_eps,previous_eps_yoy = getmetric('EPS',df,year,quarter)
 
 
-    # show Metrics
-    st.markdown('### Metrics')
-
-    # Add space
-    st.markdown('<br>', unsafe_allow_html=True)
-
-    if filtered_data.empty:
+    if df.empty:
         st.markdown('No data available for the selected stock and year range.')
     else:
         # Display the metrics
