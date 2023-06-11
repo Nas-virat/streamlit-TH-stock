@@ -35,7 +35,7 @@ def cashflowFeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
         fig=fig,
         df=df,
         columns=['Operating Cash Flow','Investing Cash Flow','Financing Cash Flow'],
-        markers=['#1f77b4','#ff7f0e','#2ca02c'],
+        markers=setColor(['Operating Cash Flow','Investing Cash Flow','Financing Cash Flow']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Amount',

@@ -25,7 +25,7 @@ def RoeroaFeature(st,df : pd.DataFrame,year:int,quarter:int) -> None:
         fig=fig,
         df=df,
         columns=['ROE','ROA'],
-        markers=['#2ca02c','#d62728'],
+        markers=setColor(['ROE','ROA']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Amount',

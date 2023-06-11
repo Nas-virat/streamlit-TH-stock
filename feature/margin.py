@@ -3,6 +3,7 @@ import plotly.graph_objects as go
 from plotly.subplots import make_subplots
 
 from utils.lineplot import *
+from utils.utils import *
 
 def marginFeature(st,df : pd.DataFrame) -> None:
 
@@ -12,7 +13,7 @@ def marginFeature(st,df : pd.DataFrame) -> None:
         fig=figline,
         df=df,
         columns=['Gross Profit Margin','EBIT Margin','Net Profit Margin'],
-        markers=['#2ca02c','#ff7f0e','#d62728'],
+        markers=setColor(['Gross Profit Margin','EBIT Margin','Net Profit Margin']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Amount',

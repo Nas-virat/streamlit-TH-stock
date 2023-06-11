@@ -29,7 +29,7 @@ def cashCyclefeature(st,df:pd.DataFrame,year:int,quarter:int) -> None:
         fig=fig,
         df=df,
         columns=['Average Sale Period','Average Collection Period','Average Payment Period'],
-        markers=['#1f77b4','#ff7f0e','#2ca02c'],
+        markers=setColor(['Average Sale Period','Average Collection Period','Average Payment Period']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Days',

@@ -2,6 +2,7 @@ import pandas as pd
 from plotly.subplots import make_subplots
 
 from utils.barplot import *
+from utils.utils import *
 
 def epsFeature(st,df: pd.DataFrame) -> None:
 
@@ -11,7 +12,7 @@ def epsFeature(st,df: pd.DataFrame) -> None:
         fig=figeps,
         df=df,
         columns=['EPS'],
-        markers=['#2ca02c'],
+        markers=setColor(['EPS']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Amount',

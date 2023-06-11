@@ -2,6 +2,7 @@ import pandas as pd
 from plotly.subplots import make_subplots
 
 from utils.barplot import *
+from utils.utils import *
 
 def revenueProfitFeature(st,df : pd.DataFrame) -> None:
 
@@ -11,7 +12,7 @@ def revenueProfitFeature(st,df : pd.DataFrame) -> None:
         fig=fig,
         df=df,
         columns=['Revenue','EBITDA','Net Profit'],
-        markers=['#1f77b4','#ff7f0e','#2ca02c'],
+        markers=setColor(['Revenue','EBITDA','Net Profit']),
         legendfontsize=20,
         xaxis_title='Year',
         yaxis_title='Amount',

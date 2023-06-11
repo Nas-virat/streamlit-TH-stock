@@ -33,4 +33,9 @@ Color = {
     'EBIT Margin': '#2ca02c',
     'Net Profit Margin': '#d62728',
 
+    #turnover
+    'Total Asset Turnover': '#9467bd',
+    'Inventory Turnover': '#727272',
+    'Accounts Receivable Turnover': '#8c564b',
+    'Account Payable Turnover': '#e377c2',
 }
