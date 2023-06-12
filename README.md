@@ -76,13 +76,13 @@ streamlit run dashboard.py
 - Balance Sheet
 ![BS img](example/BS.png)
 - Cash Cycle
-![Cash Cycle img](example/cashcycle.png)
+![Cash Cycle img](example/Cashcycle.png)
 - Cash Flow
-![Cash Flow img](example/cashflow.png)
+![Cash Flow img](example/CF.png)
 - EPS
-![EPS img](example/eps.png)
+![EPS img](example/EPS.png)
 - Gross Margin ,EBIT Margin , Net Margin
-![Gross Margin ,EBIT Margin , Net Margin img](example/margin.png)
+![Gross Margin ,EBIT Margin , Net Margin img](example/Margin.png)
 - Revenue and Profit
 ![Revenue and Profit img](example/RevenueProfit.png)
 - ROE ROA
