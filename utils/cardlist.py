@@ -1,9 +1,10 @@
 import pandas as pd
 from utils.utils import *
+from typing import List
 
 def card(
          st,
-         columns:list[str],
+         columns:List[str],
          df: pd.DataFrame,
          year: int,
          quarter: int
@@ -23,7 +24,7 @@ def card(
 
 def cardYoY(
          st,
-         columns:list[str],
+         columns:List[str],
          df: pd.DataFrame,
          year: int,
          quarter: int

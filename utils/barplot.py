@@ -2,12 +2,13 @@ import pandas as pd
 
 import plotly.graph_objects as go
 from plotly.subplots import make_subplots
+from typing import List 
 
 def barplot(
         fig:go.Figure,
         df:pd.DataFrame,
-        columns:list[str],
-        markers:list[str],
+        columns:List[str],
+        markers:List[str],
         legendfontsize:int,
         xaxis_title:str,
         yaxis_title:str,

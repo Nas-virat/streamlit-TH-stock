@@ -1,5 +1,6 @@
 import pandas as pd 
 from config.color import *
+from typing import List
 def getCurrentData(
         column:str,
         df: pd.DataFrame,
@@ -24,7 +25,7 @@ def getmetric(
 
     return current_temp , previous_temp_yoy
 
-def setColor(columns:list[str]) -> list[str]:
+def setColor(columns:List[str]) -> List[str]:
     list_color = []
     for column in columns:
         list_color.append(Color[column])
